@@ -1,4 +1,3 @@
-# Rastreabilidade de IA
+# AI_LOG
 
-| Pedido ao agente | Aceito/rejeitado | Justificativa técnica e verificação |
-|---|---|---|
+Foi utilizada IA como apoio para resolver eventuais erros durante a atividade e validar as implementações.
