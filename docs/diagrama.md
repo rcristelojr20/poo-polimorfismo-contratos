@@ -1,3 +1,45 @@
-# Modelo a completar
+# Diagrama UML
 
-Desenhe Sensor como classe abstrata, as três especializações e a dependência do painel em Sensor. Inclua as operações do contrato e marque as abstratas. O painel recebe uma referência; ele não possui os sensores.
+```mermaid
+classDiagram
+    class Sensor {
+        <<abstract>>
+        +tag() string
+        +valor() double*
+        +unidade() string*
+        +atualizar(leitura) bool*
+        +emAlerta() bool*
+    }
+
+    class SensorNivel {
+        -valor_ double
+        +valor() double
+        +unidade() string
+        +atualizar(leitura) bool
+        +emAlerta() bool
+    }
+
+    class SensorTemperatura {
+        -valor_ double
+        +valor() double
+        +unidade() string
+        +atualizar(leitura) bool
+        +emAlerta() bool
+    }
+
+    class SensorPressao {
+        -valor_ double
+        +valor() double
+        +unidade() string
+        +atualizar(leitura) bool
+        +emAlerta() bool
+    }
+
+    class Painel {
+        +linhaPainel(sensor) string
+    }
+
+    Sensor <|-- SensorNivel
+    Sensor <|-- SensorTemperatura
+    Sensor <|-- SensorPressao
+    Painel ..> Sensor : recebe referência
